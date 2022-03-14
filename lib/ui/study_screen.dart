@@ -24,8 +24,8 @@ class _StudyPageState extends State<StudyPage> {
 
   final List<Map> _mataKuliah = [
     {'nilai': 'A', 'nama': 'Bahasa Pemograman'},
-    {'nilai': 'A', 'nama': 'Statistika'},
-    {'nilai': 'A', 'nama': 'Matematika Diskret'},
+    {'nilai': 'B', 'nama': 'Statistika'},
+    {'nilai': 'C', 'nama': 'Matematika Diskret'},
     {'nilai': 'A', 'nama': 'Riset Operasi'},
     {'nilai': 'A', 'nama': 'Menejemen Resiko'},
     {'nilai': 'A', 'nama': 'Strategi Sitem'},

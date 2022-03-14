@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/label_name.dart';
+import '../widgets/label_name_widget.dart';
 
 class HomePage extends StatefulWidget {
   @override
