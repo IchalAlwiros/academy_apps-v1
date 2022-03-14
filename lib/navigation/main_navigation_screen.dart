@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../ui/calender_scren.dart';
+import '../ui/home_screen.dart';
+import '../ui/news_screen.dart';
+import '../ui/study_screen.dart';
+
 class MainNavigationScreen extends StatefulWidget {
   @override
   _MainNavigationScreenState createState() => _MainNavigationScreenState();
@@ -9,7 +14,12 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _selectedIndex = 0;
   String _title = '';
 
-  List<Widget> _widgetOptions = <Widget>[];
+  List<Widget> _widgetOptions = <Widget>[
+    HomePage(),
+    NewsPage(),
+    StudyPage(),
+    CalendarPage(),
+  ];
 
   initState() {
     _title = 'default';
