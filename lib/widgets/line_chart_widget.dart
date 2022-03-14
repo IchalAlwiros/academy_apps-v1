@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_academy_apps/widgets/line_titles_widget.dart';
 
 class LineChartWidget extends StatelessWidget {
   final List<Color> gradientColors = [

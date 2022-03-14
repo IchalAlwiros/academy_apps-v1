@@ -290,12 +290,12 @@ class IconButton extends StatelessWidget {
           Container(
             // margin: EdgeInsets.only(bottom: 5),
             child: Material(
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(15),
               ),
               color: Colors.transparent,
               child: InkWell(
-                borderRadius: BorderRadius.all(
+                borderRadius: const BorderRadius.all(
                   Radius.circular(15),
                 ),
                 onTap: () {},
@@ -305,7 +305,7 @@ class IconButton extends StatelessWidget {
                   width: 60,
                   decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor,
-                    borderRadius: BorderRadius.all(
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(15),
                     ),
                   ),
@@ -328,7 +328,7 @@ class IconButton extends StatelessWidget {
             padding: const EdgeInsets.only(top: 5, bottom: 5),
             child: Text(
               nameLabel,
-              style: TextStyle(fontSize: 14),
+              style: const TextStyle(fontSize: 14),
             ),
           )
         ],

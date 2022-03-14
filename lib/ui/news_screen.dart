@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/label_name.dart';
+import '../widgets/label_name_widget.dart';
 
 class NewsPage extends StatelessWidget {
   @override
@@ -46,7 +46,8 @@ class NewsPage extends StatelessWidget {
                     aspectRatio: 16 / 9,
                     autoPlayCurve: Curves.fastOutSlowIn,
                     enableInfiniteScroll: true,
-                    autoPlayAnimationDuration: Duration(milliseconds: 800),
+                    autoPlayAnimationDuration:
+                        const Duration(milliseconds: 800),
                     viewportFraction: 0.8,
                   ),
                 )
