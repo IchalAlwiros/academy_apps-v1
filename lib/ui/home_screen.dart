@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -33,21 +33,21 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Indeks Prestasi',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.white),
                     ),
-                    Text(
+                    const Text(
                       'Semester Lima',
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.white,
                       ),
                     ),
-                    Text(
+                    const Text(
                       '3.53',
                       style: TextStyle(
                           fontSize: 18,
@@ -55,11 +55,11 @@ class _HomePageState extends State<HomePage> {
                           color: Colors.white),
                     ),
                     Container(
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         vertical: 3,
                         horizontal: 10,
                       ),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.all(Radius.circular(20))),
                       child: Row(
@@ -162,7 +162,7 @@ class _HomePageState extends State<HomePage> {
                 fit: BoxFit.cover,
               ),
             ),
-            child: Text(
+            child: const Text(
               'Pentingnya Pahami Jurusan Komunikasi Sebelum Kuliah',
               style: TextStyle(
                 fontSize: 14,
@@ -172,7 +172,7 @@ class _HomePageState extends State<HomePage> {
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
-            alignment: Alignment(1, 1),
+            alignment: const Alignment(1, 1),
           ),
         ],
       ),

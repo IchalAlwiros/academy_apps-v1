@@ -236,8 +236,8 @@ class LinkHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      margin: EdgeInsets.only(right: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      margin: const EdgeInsets.only(right: 10),
       // decoration: BoxDecoration(
       //   color: link ? Colors.blue.shade500 : Colors.grey.shade300,
       //   borderRadius: BorderRadius.circular(50),
