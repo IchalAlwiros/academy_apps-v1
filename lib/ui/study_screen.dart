@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../widgets/label_name_widget.dart';
-import '../widgets/line_chart_widget.dart';
+import 'package:flutter_academy_apps/ui/lib_screen.dart';
 
 class StudyPage extends StatefulWidget {
   @override
