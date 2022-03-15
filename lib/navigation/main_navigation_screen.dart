@@ -22,7 +22,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   ];
 
   initState() {
-    _title = 'default';
+    _title = 'defult';
   }
 
   @override
@@ -30,10 +30,10 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(70.0),
+        preferredSize: Size.fromHeight(80.0),
         child: AppBar(
           elevation: 1,
-          toolbarHeight: 60,
+          toolbarHeight: 80,
           backgroundColor: Colors.white,
           centerTitle: true,
           title: _title == 'default'
@@ -48,7 +48,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(
-                              'Hai, Sheila Shafitri Zahra Githanaira',
+                              'Hai, Ichal Wira',
                               overflow: TextOverflow.ellipsis,
                               maxLines: 1,
                               style: TextStyle(
@@ -58,10 +58,10 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                               ),
                             ),
                             Text(
-                              '1301100310 - Sistem Informasi',
+                              '1301100310 - Teknik Komputer',
                               maxLines: 1,
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xff9A9A9A),
                               ),
@@ -75,7 +75,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                         child: CircleAvatar(
                           radius: 27,
                           backgroundImage:
-                              AssetImage('assets/images/image_profile.jpg'),
+                              AssetImage('assets/images/Pas Fot.png'),
                         ),
                       ),
                     ],
@@ -93,7 +93,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         ),
       ),
       bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(30.0),
           topRight: Radius.circular(30.0),
         ),
@@ -103,7 +103,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           showSelectedLabels: true,
           showUnselectedLabels: true,
           unselectedItemColor: Colors.grey,
-          selectedItemColor: Color(0xff0073AC),
+          selectedItemColor: const Color(0xff0073AC),
           items: [
             BottomNavigationBarItem(
               label: "Home",

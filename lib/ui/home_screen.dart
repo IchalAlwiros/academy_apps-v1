@@ -1,7 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/material.dart';
-
-import '../widgets/label_name_widget.dart';
+import 'package:flutter_academy_apps/ui/lib_screen.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -83,8 +80,9 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    IconButtonIP('Notifikasi', Icons.notifications, true),
-                    IconButtonIP('Scan QR', Icons.qr_code_scanner_sharp, false),
+                    _IconButtonIP('Notifikasi', Icons.notifications, true),
+                    _IconButtonIP(
+                        'Scan QR', Icons.qr_code_scanner_sharp, false),
                   ],
                 ),
               ],
@@ -97,10 +95,10 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconButton('Kalender', Icons.calendar_today),
-                    IconButton('Pesan', Icons.mail),
-                    IconButton('Repositori', Icons.folder),
-                    IconButton('Presensi', Icons.person_add_alt_1),
+                    _IconButton('Kalender', Icons.calendar_today),
+                    _IconButton('Pesan', Icons.mail),
+                    _IconButton('Repositori', Icons.folder),
+                    _IconButton('Presensi', Icons.person_add_alt_1),
                   ],
                 ),
                 SizedBox(
@@ -109,10 +107,10 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconButton('UKT', Icons.account_balance_wallet),
-                    IconButton('Catatan', Icons.edit_road_outlined),
-                    IconButton('Transkrip', Icons.bar_chart),
-                    IconButton('Lainnya', Icons.important_devices_outlined),
+                    _IconButton('UKT', Icons.account_balance_wallet),
+                    _IconButton('Catatan', Icons.edit_road_outlined),
+                    _IconButton('Transkrip', Icons.bar_chart),
+                    _IconButton('Lainnya', Icons.important_devices_outlined),
                   ],
                 ),
               ],
@@ -125,13 +123,13 @@ class _HomePageState extends State<HomePage> {
               children: [
                 CarouselSlider(
                   items: [
-                    JadwalItem('SI-110', 'Algoritma', 'GB-0021',
+                    _JadwalItem('SI-110', 'Algoritma', 'GB-0021',
                         'Dr. Ahmad Syamsudin, S.T., M.Eng.', '7.00'),
-                    JadwalItem('SI-120', 'Matematika Komputer', 'GB-0031',
+                    _JadwalItem('SI-120', 'Matematika Komputer', 'GB-0031',
                         'Ir. Joko Widodo', '10.00'),
-                    JadwalItem('SI-210', 'Bahasa Indonesia', 'GK-0001',
+                    _JadwalItem('SI-210', 'Bahasa Indonesia', 'GK-0001',
                         'Sastro Wardoyo, S.Pd., M.Pd.', '13.00'),
-                    JadwalItem('SI-210', 'Bahasa Indonesia', 'GK-0001',
+                    _JadwalItem('SI-210', 'Bahasa Indonesia', 'GK-0001',
                         'Sastro Wardoyo, S.Pd., M.Pd.', '13.00'),
                   ],
                   options: CarouselOptions(
@@ -178,21 +176,21 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class JadwalItem extends StatelessWidget {
+class _JadwalItem extends StatelessWidget {
   final String kodeMataKuliah;
   final String namaMataKuliah;
   final String ruangKuliah;
   final String pengajarMataKuliah;
   final String waktuKuliah;
 
-  JadwalItem(this.kodeMataKuliah, this.namaMataKuliah, this.ruangKuliah,
+  _JadwalItem(this.kodeMataKuliah, this.namaMataKuliah, this.ruangKuliah,
       this.pengajarMataKuliah, this.waktuKuliah);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.grey.shade300)),
@@ -272,21 +270,20 @@ class JadwalItem extends StatelessWidget {
   }
 }
 
-class IconButton extends StatelessWidget {
+class _IconButton extends StatelessWidget {
   final String nameLabel;
   final IconData iconLabel;
 
-  IconButton(this.nameLabel, this.iconLabel);
+  _IconButton(this.nameLabel, this.iconLabel);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 5),
+      margin: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            // margin: EdgeInsets.only(bottom: 5),
             child: Material(
               borderRadius: const BorderRadius.all(
                 Radius.circular(15),
@@ -299,8 +296,8 @@ class IconButton extends StatelessWidget {
                 onTap: () {},
                 child: Container(
                   // margin: EdgeInsets.all(5),
-                  height: 60,
-                  width: 60,
+                  height: 50,
+                  width: 50,
                   decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor,
                     borderRadius: const BorderRadius.all(
@@ -313,7 +310,7 @@ class IconButton extends StatelessWidget {
                         Icon(
                           iconLabel,
                           color: Colors.white,
-                          size: 40,
+                          size: 30,
                         ),
                       ],
                     ),
@@ -335,12 +332,12 @@ class IconButton extends StatelessWidget {
   }
 }
 
-class IconButtonIP extends StatelessWidget {
+class _IconButtonIP extends StatelessWidget {
   final String nameLabel;
   final IconData iconLabel;
   final bool notifikasi;
 
-  IconButtonIP(this.nameLabel, this.iconLabel, this.notifikasi);
+  _IconButtonIP(this.nameLabel, this.iconLabel, this.notifikasi);
 
   @override
   Widget build(BuildContext context) {
