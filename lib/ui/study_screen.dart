@@ -154,34 +154,6 @@ class _StudyPageState extends State<StudyPage> {
                 TableRowItem('Menejemem Resiko', 'AB'),
                 TableRowItem('Bahasa Inggris', 'A'),
               ],
-              //     _mataKuliah.map((matakuliah) {
-              //   return TableRow(children: [
-              //     Container(
-              //         color: _mataKuliah.indexOf(matakuliah) % 2 == 0
-              //             ? Colors.blue[50]
-              //             : Colors.grey[50],
-              //         padding: EdgeInsets.all(3),
-              //         child: Text(matakuliah['nama'])),
-              //     Container(
-              //         color: _mataKuliah.indexOf(matakuliah) % 2 == 0
-              //             ? Colors.blue[50]
-              //             : Colors.grey[50],
-              //         padding: EdgeInsets.all(3),
-              //         child: Text(matakuliah['nilai'])),
-              //     Container(
-              //         color: _mataKuliah.indexOf(matakuliah) % 2 == 0
-              //             ? Colors.blue[50]
-              //             : Colors.grey[50],
-              //         padding: EdgeInsets.all(3),
-              //         child: Text('x')),
-              //     Container(
-              //         color: _mataKuliah.indexOf(matakuliah) % 2 == 0
-              //             ? Colors.blue[50]
-              //             : Colors.grey[50],
-              //         padding: EdgeInsets.all(3),
-              //         child: Text('x'))
-              //   ]);
-              // }).toList(),
             ),
           ),
           SizedBox(

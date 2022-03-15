@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_academy_apps/ui/lib_screen.dart';
 
 import '../ui/calender_scren.dart';
 import '../ui/home_screen.dart';
@@ -22,7 +22,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   ];
 
   initState() {
-    _title = 'defult';
+    _title = 'default';
   }
 
   @override
@@ -34,10 +34,13 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         child: AppBar(
           elevation: 1,
           toolbarHeight: 80,
+          leadingWidth: 0,
           backgroundColor: Colors.white,
           centerTitle: true,
           title: _title == 'default'
               ? Container(
+                  // color: Colors.amber,
+                  width: MediaQuery.of(context).size.width,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -48,7 +51,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(
-                              'Hai, Ichal Wira',
+                              'Hai, Ichal Wira. S',
                               overflow: TextOverflow.ellipsis,
                               maxLines: 1,
                               style: TextStyle(
@@ -69,14 +72,18 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                           ],
                         ),
                       ),
-                      CircleAvatar(
-                        radius: 30,
-                        backgroundColor: Color(0xff0073AC),
-                        child: CircleAvatar(
-                          radius: 27,
-                          backgroundImage:
-                              AssetImage('assets/images/Pas Fot.png'),
+                      Container(
+                        width: 58,
+                        height: 58,
+                        padding: const EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            width: 1.5,
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
+                        child: Image.asset('assets/images/Pas Fot.png'),
                       ),
                     ],
                   ),
@@ -103,7 +110,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           showSelectedLabels: true,
           showUnselectedLabels: true,
           unselectedItemColor: Colors.grey,
-          selectedItemColor: const Color(0xff0073AC),
+          selectedItemColor: primaryColor,
           items: [
             BottomNavigationBarItem(
               label: "Home",

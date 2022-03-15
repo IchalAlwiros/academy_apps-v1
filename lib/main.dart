@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_academy_apps/navigation/main_navigation_screen.dart';
+import 'package:flutter_academy_apps/ui/lib_screen.dart';
+import 'package:flutter_academy_apps/ui/splash_screen.dart';
 
 void main() => runApp(const AcademyApps());
 
@@ -11,10 +13,13 @@ class AcademyApps extends StatelessWidget {
     return MaterialApp(
       title: 'Academy Apps',
       debugShowCheckedModeBanner: false,
-      home: MainNavigationScreen(),
+      routes: {
+        '/': (context) => SplashPage(),
+        '/home': (context) => MainNavigationScreen(),
+      },
       theme: ThemeData(
         fontFamily: 'Poppins',
-        primaryColor: const Color(0xff0073AC),
+        primaryColor: primaryColor,
       ),
     );
   }

@@ -13,104 +13,33 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          _TopHomeCard(),
           Container(
-            height: 140.0,
-            padding: EdgeInsets.all(15),
-            decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.all(Radius.circular(10)),
+            padding: EdgeInsets.only(
+              top: 25,
+              bottom: 10,
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      'Indeks Prestasi',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                    const Text(
-                      'Semester Lima',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const Text(
-                      '3.53',
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 3,
-                        horizontal: 10,
-                      ),
-                      decoration: const BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Seluruh Semester',
-                            style: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios,
-                            size: 15,
-                            color: Theme.of(context).primaryColor,
-                          )
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    _IconButtonIP('Notifikasi', Icons.notifications, true),
-                    _IconButtonIP(
-                        'Scan QR', Icons.qr_code_scanner_sharp, false),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 25, bottom: 10),
             child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    _IconButton('Kalender', Icons.calendar_today),
-                    _IconButton('Pesan', Icons.mail),
-                    _IconButton('Repositori', Icons.folder),
-                    _IconButton('Presensi', Icons.person_add_alt_1),
+                    _ItemsMenu('Kalender', Icons.calendar_today),
+                    _ItemsMenu('Presensi', Icons.person_add_alt_1),
+                    _ItemsMenu('UKT', Icons.account_balance_wallet),
+                    _ItemsMenu('Repo', Icons.folder),
                   ],
                 ),
-                SizedBox(
-                  height: 10,
-                ),
+                // SizedBox(
+                //   height: 10,
+                // ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    _IconButton('UKT', Icons.account_balance_wallet),
-                    _IconButton('Catatan', Icons.edit_road_outlined),
-                    _IconButton('Transkrip', Icons.bar_chart),
-                    _IconButton('Lainnya', Icons.important_devices_outlined),
+                    _ItemsMenu('Pesan', Icons.mail),
+                    _ItemsMenu('Catatan', Icons.edit_road_outlined),
+                    _ItemsMenu('Transkip', Icons.bar_chart),
+                    _ItemsMenu('Lainnya', Icons.menu),
                   ],
                 ),
               ],
@@ -176,6 +105,88 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+class _TopHomeCard extends StatelessWidget {
+  const _TopHomeCard({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 140.0,
+      padding: EdgeInsets.all(15),
+      decoration: BoxDecoration(
+        color: Theme.of(context).primaryColor,
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Indeks Prestasi',
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+              const Text(
+                'Semester Lima',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.white,
+                ),
+              ),
+              const Text(
+                '3.53',
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 3,
+                  horizontal: 10,
+                ),
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Seluruh Semester',
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColor,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      size: 15,
+                      color: Theme.of(context).primaryColor,
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _IconButtonIP('Notifikasi', Icons.notifications, true),
+              _IconButtonIP('Scan QR', Icons.qr_code_scanner_sharp, false),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _JadwalItem extends StatelessWidget {
   final String kodeMataKuliah;
   final String namaMataKuliah;
@@ -200,13 +211,14 @@ class _JadwalItem extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 35,
-            backgroundColor: Color(0xff0073AC),
+            backgroundColor: Theme.of(context).primaryColor,
             child: CircleAvatar(
               radius: 30,
               backgroundColor: Colors.white,
               child: Text(
                 waktuKuliah,
                 style: TextStyle(
+                  color: Theme.of(context).primaryColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),
@@ -270,11 +282,11 @@ class _JadwalItem extends StatelessWidget {
   }
 }
 
-class _IconButton extends StatelessWidget {
+class _ItemsMenu extends StatelessWidget {
   final String nameLabel;
   final IconData iconLabel;
 
-  _IconButton(this.nameLabel, this.iconLabel);
+  _ItemsMenu(this.nameLabel, this.iconLabel);
 
   @override
   Widget build(BuildContext context) {
@@ -283,36 +295,61 @@ class _IconButton extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
+          // Container(
+          //   child: Material(
+          //     borderRadius: const BorderRadius.all(
+          //       Radius.circular(15),
+          //     ),
+          //     color: Colors.transparent,
+          //     child:
+          //     InkWell(
+          //       borderRadius: const BorderRadius.all(
+          //         Radius.circular(0),
+          //       ),
+          //       onTap: () {},
+          //       child: Container(
+          //         // margin: EdgeInsets.all(5),
+          //         height: 50,
+          //         width: 50,
+          //         decoration: BoxDecoration(
+          //           color: Theme.of(context).primaryColor,
+          //           borderRadius: const BorderRadius.all(
+          //             Radius.circular(15),
+          //           ),
+          //         ),
+          //         child: Center(
+          //           child: Stack(
+          //             children: [
+          //               Icon(
+          //                 iconLabel,
+          //                 color: Colors.white,
+          //                 size: 30,
+          //               ),
+          //             ],
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(30),
             child: Material(
-              borderRadius: const BorderRadius.all(
-                Radius.circular(15),
-              ),
-              color: Colors.transparent,
               child: InkWell(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(15),
-                ),
                 onTap: () {},
-                child: Container(
-                  // margin: EdgeInsets.all(5),
+                highlightColor: Colors.red.withOpacity(0.3),
+                splashColor: Colors.white.withOpacity(0.5),
+                child: Ink(
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColor,
-                    borderRadius: const BorderRadius.all(
-                      Radius.circular(15),
-                    ),
-                  ),
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.circular(30)),
                   child: Center(
-                    child: Stack(
-                      children: [
-                        Icon(
-                          iconLabel,
-                          color: Colors.white,
-                          size: 30,
-                        ),
-                      ],
+                    child: Icon(
+                      iconLabel,
+                      color: Colors.white,
+                      size: 30,
                     ),
                   ),
                 ),
