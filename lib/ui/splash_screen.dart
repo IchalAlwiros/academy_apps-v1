@@ -39,6 +39,10 @@ class _SplashPageState extends State<SplashPage> {
                       // ),
                       Text(
                         'ACADEMIC',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 20,
+                            color: Colors.white),
                       ),
                     ],
                   ),

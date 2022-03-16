@@ -4,8 +4,8 @@ import 'package:flutter_academy_apps/widgets/line_titles_widget.dart';
 
 class LineChartWidget extends StatelessWidget {
   final List<Color> gradientColors = [
-    Color(0xFF8AD8FF),
-    Color(0xff0073AC),
+    Color.fromARGB(255, 255, 207, 134),
+    Color.fromARGB(255, 240, 130, 40),
   ];
 
   @override
@@ -47,7 +47,7 @@ class LineChartWidget extends StatelessWidget {
                 FlSpot(5, 2.28),
                 FlSpot(6, 3.10),
                 FlSpot(7, 3.38),
-                FlSpot(8, 3.20),
+                FlSpot(8, 3.40),
               ],
               isCurved: true,
               colors: gradientColors,

@@ -30,11 +30,11 @@ class NewsPage extends StatelessWidget {
               children: [
                 CarouselSlider(
                   items: [
-                    BeritaTerkini(),
-                    BeritaTerkini(),
-                    BeritaTerkini(),
-                    BeritaTerkini(),
-                    BeritaTerkini(),
+                    _BeritaTerbaru(),
+                    _BeritaTerbaru(),
+                    _BeritaTerbaru(),
+                    _BeritaTerbaru(),
+                    _BeritaTerbaru(),
                   ],
                   options: CarouselOptions(
                     height: 170.0,
@@ -151,7 +151,7 @@ class NewsItem extends StatelessWidget {
   }
 }
 
-class BeritaTerkini extends StatelessWidget {
+class _BeritaTerbaru extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -219,32 +219,3 @@ class BeritaTerkini extends StatelessWidget {
     );
   }
 }
-
-
-/*
-Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Text(
-            'Pentingnya Pahami Jurusan Komunikasi Sebelum Kuliah',
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-          ),
-          Text(
-            '19 Juli 2021',
-            style: TextStyle(
-              fontSize: 12,
-              color: Colors.white,
-            ),
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-          )
-        ],
-      ),
- */

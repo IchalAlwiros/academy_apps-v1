@@ -177,8 +177,8 @@ class _TopHomeCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _IconButtonIP('Notifikasi', Icons.notifications, true),
-              _IconButtonIP('Scan QR', Icons.qr_code_scanner_sharp, false),
+              // _IconButtonIP('Notifikasi', Icons.notifications, true),
+              _IconButtonIP('Scan QR', Icons.qr_code_scanner_sharp, true),
             ],
           ),
         ],
@@ -295,43 +295,6 @@ class _ItemsMenu extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Container(
-          //   child: Material(
-          //     borderRadius: const BorderRadius.all(
-          //       Radius.circular(15),
-          //     ),
-          //     color: Colors.transparent,
-          //     child:
-          //     InkWell(
-          //       borderRadius: const BorderRadius.all(
-          //         Radius.circular(0),
-          //       ),
-          //       onTap: () {},
-          //       child: Container(
-          //         // margin: EdgeInsets.all(5),
-          //         height: 50,
-          //         width: 50,
-          //         decoration: BoxDecoration(
-          //           color: Theme.of(context).primaryColor,
-          //           borderRadius: const BorderRadius.all(
-          //             Radius.circular(15),
-          //           ),
-          //         ),
-          //         child: Center(
-          //           child: Stack(
-          //             children: [
-          //               Icon(
-          //                 iconLabel,
-          //                 color: Colors.white,
-          //                 size: 30,
-          //               ),
-          //             ],
-          //           ),
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // ),
           ClipRRect(
             borderRadius: BorderRadius.circular(30),
             child: Material(
